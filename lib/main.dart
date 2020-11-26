@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:redia/perfil.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LandingPage(),
+      //home: Perfil(),
     ),
   );
 }
