@@ -73,6 +73,13 @@ const List<String> posts = [
   'https://firebasestorage.googleapis.com/v0/b/dl-flutter-ui-challenges.appspot.com/o/img%2Fdev_sid.png?alt=media',
 ];
 
+const List<String> catalogo = [
+  'https://www.periodismonegro.mx/wp-content/uploads/2018/08/carneasada.jpg',
+  'https://www.bearsinthekitchen.com/wp-content/uploads/2018/06/FBCover-1.jpg',
+  'https://i.pinimg.com/originals/ee/d4/6c/eed46c8fa64d7e958326ba665f1762dc.png',
+  'https://astelus.com/wp-content/viajes/Aguas-frescas.jpg',
+];
+
 const List<String> avatars = [
   'https://firebasestorage.googleapis.com/v0/b/dl-flutter-ui-challenges.appspot.com/o/img%2F1.jpg?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/dl-flutter-ui-challenges.appspot.com/o/img%2F4.jpg?alt=media',

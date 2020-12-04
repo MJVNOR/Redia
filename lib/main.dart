@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redia/perfil.dart';
+import 'package:redia/catalogo.dart';
 
 void main() {
   runApp(
@@ -7,6 +8,15 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: LandingPage(),
       //home: Perfil(),
+      //home: Catalogo(),
+      theme: ThemeData(
+        primaryColor: const Color(0xff9fb7bf),
+        primaryTextTheme: TextTheme(
+          headline6: TextStyle(
+            color: Colors.white
+          )
+        )
+      ),
     ),
   );
 }
