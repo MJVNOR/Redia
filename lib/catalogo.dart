@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:redia/core/presentation/res/assets.dart'
-        as assets;
+import 'package:redia/core/presentation/res/assets.dart' as assets;
 import 'package:redia/src/widgets/network_image.dart';
 
 class Catalogo extends StatelessWidget {
   static final String path = "lib/src/catalogo.dart";
 
   final List<Map> catalogo = [
-    {"title": "Tacos de asada", "image": assets.catalogo[0],},
-    {"title": "Costillas", "image": assets.catalogo[1],},
-    {"title": "Quesadillas", "image": assets.catalogo[2],},
-    {"title": "Aguas frescas", "image": assets.catalogo[3],},
+    {
+      "title": "Tacos de asada",
+      "image": assets.catalogo[0],
+    },
+    {
+      "title": "Costillas",
+      "image": assets.catalogo[1],
+    },
+    {
+      "title": "Quesadillas",
+      "image": assets.catalogo[2],
+    },
+    {
+      "title": "Aguas frescas",
+      "image": assets.catalogo[3],
+    },
   ];
 
   final List<Map> precios = [
@@ -28,13 +39,13 @@ class Catalogo extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-              expandedHeight: 300.0,
-              pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text('Taquería LCC'),
-                background: PNetworkImage(assets.posts[0], fit: BoxFit.cover),
-              ),
-              ),
+            expandedHeight: 300.0,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text('Taquería LCC'),
+              background: PNetworkImage(assets.posts[0], fit: BoxFit.cover),
+            ),
+          ),
           SliverToBoxAdapter(
             child: Container(
                 color: const Color(0xff3d6573),
@@ -45,17 +56,13 @@ class Catalogo extends StatelessWidget {
                     children: <Widget>[
                       // ignore: missing_required_param
                       MaterialButton(
-                          //onPressed: () {},
-                          child: Text("Catálogo".toUpperCase(),
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold))),
-                      MaterialButton(
-                          onPressed: () {},
-                          child: Text("Volver".toUpperCase(),
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400))),
+                        //onPressed: () {},
+                        child: Text(
+                          "Catálogo".toUpperCase(),
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
                 )),
@@ -154,9 +161,9 @@ class Catalogo extends StatelessWidget {
                 catalogo[index]['title'],
                 softWrap: true,
                 style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
               subtitle: Text(
                 precios[index]['title'],
@@ -188,11 +195,11 @@ class Catalogo extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                       child: Center(
-                        child: Hero(
-                            tag: "item$index",
-                            child: PNetworkImage(catalogo[index]['image'],
-                                fit: BoxFit.cover)),
-                      )),
+                    child: Hero(
+                        tag: "item$index",
+                        child: PNetworkImage(catalogo[index]['image'],
+                            fit: BoxFit.cover)),
+                  )),
                   SizedBox(
                     height: 10.0,
                   ),
@@ -200,9 +207,9 @@ class Catalogo extends StatelessWidget {
                     catalogo[index]['title'],
                     softWrap: true,
                     style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                   SizedBox(
                     height: 10.0,

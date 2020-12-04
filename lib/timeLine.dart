@@ -1,4 +1,10 @@
+import 'dart:html';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:redia/core/presentation/res/assets.dart' as assets;
+import 'package:redia/src/widgets/network_image.dart';
+import 'package:redia/perfil.dart';
+import 'package:redia/catalogo.dart';
 
 class TimeLine extends StatelessWidget {
   @override
@@ -77,12 +83,18 @@ class TimeLine extends StatelessWidget {
                               clipBehavior: Clip.hardEdge,
                               color: Colors.transparent,
                               child: Ink.image(
-                                image: AssetImage("images/fondo.jpg"),
+                                image: NetworkImage(assets.avatar),
                                 fit: BoxFit.cover,
                                 width: 50.0,
                                 height: 50.0,
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Perfil()),
+                                    );
+                                  },
                                 ),
                               ),
                             ),
@@ -123,7 +135,7 @@ class TimeLine extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Image.asset('images/fondo.jpg'),
+                        PNetworkImage(assets.posts[0], fit: BoxFit.cover),
                       ],
                     ),
                   ),

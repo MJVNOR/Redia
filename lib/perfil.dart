@@ -2,29 +2,100 @@ import 'dart:html';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:redia/core/presentation/res/assets.dart'
-        as assets;
+import 'package:redia/core/presentation/res/assets.dart' as assets;
 import 'package:redia/src/widgets/network_image.dart';
+import 'package:redia/catalogo.dart';
 
 class Perfil extends StatelessWidget {
   static final String path = "lib/src/perfil.dart";
   final List<Map> catalogo = [
-    {"title": "Tacos de asada", "image": assets.catalogo[0],},
-    {"title": "Costillas", "image": assets.catalogo[1],},
-    {"title": "Quesadillas", "image": assets.catalogo[2],},
-    {"title": "Aguas frescas", "image": assets.catalogo[3],},
-    {"title": "Tacos de asada", "image": assets.catalogo[0],},
-    {"title": "Costillas", "image": assets.catalogo[1],},
-    {"title": "Quesadillas", "image": assets.catalogo[2],},
-    {"title": "Aguas frescas", "image": assets.catalogo[3],},
-    {"title": "Tacos de asada", "image": assets.catalogo[0],},
-    {"title": "Costillas", "image": assets.catalogo[1],},
-    {"title": "Quesadillas", "image": assets.catalogo[2],},
-    {"title": "Aguas frescas", "image": assets.catalogo[3],},
+    {
+      "title": "Tacos de asada",
+      "image": assets.catalogo[0],
+    },
+    {
+      "title": "Costillas",
+      "image": assets.catalogo[1],
+    },
+    {
+      "title": "Quesadillas",
+      "image": assets.catalogo[2],
+    },
+    {
+      "title": "Aguas frescas",
+      "image": assets.catalogo[3],
+    },
+    {
+      "title": "Tacos de asada",
+      "image": assets.catalogo[0],
+    },
+    {
+      "title": "Costillas",
+      "image": assets.catalogo[1],
+    },
+    {
+      "title": "Quesadillas",
+      "image": assets.catalogo[2],
+    },
+    {
+      "title": "Aguas frescas",
+      "image": assets.catalogo[3],
+    },
+    {
+      "title": "Tacos de asada",
+      "image": assets.catalogo[0],
+    },
+    {
+      "title": "Costillas",
+      "image": assets.catalogo[1],
+    },
+    {
+      "title": "Quesadillas",
+      "image": assets.catalogo[2],
+    },
+    {
+      "title": "Aguas frescas",
+      "image": assets.catalogo[3],
+    },
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: const Text(
+          'Redia',
+          style: TextStyle(
+            fontFamily: 'Myriad CAD',
+            fontSize: 40,
+            color: const Color(0xff3d6573),
+          ),
+          textAlign: TextAlign.center,
+        ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Material(
+              elevation: 4.0,
+              shape: CircleBorder(),
+              clipBehavior: Clip.hardEdge,
+              color: Colors.transparent,
+              child: Ink.image(
+                image: NetworkImage(
+                  "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg",
+                ),
+                fit: BoxFit.cover,
+                width: 50.0,
+                height: 50.0,
+                child: InkWell(
+                  onTap: () {},
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
       body: Stack(
         children: <Widget>[
           Container(
@@ -51,8 +122,8 @@ class Perfil extends StatelessWidget {
       return Container(
           color: Colors.white,
           padding: EdgeInsets.only(left: 20.0, top: 20.0, bottom: 10.0),
-          child: Text("Publicaciones",
-              style: Theme.of(context).textTheme.title));
+          child:
+              Text("Publicaciones", style: Theme.of(context).textTheme.title));
     return _buildListItem();
   }
 
@@ -79,7 +150,12 @@ class Perfil extends StatelessWidget {
             style: Theme.of(context).textTheme.title,
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Catalogo()),
+              );
+            },
             child: Text(
               "Ver catálogo",
               style: TextStyle(color: Colors.blue),
@@ -186,7 +262,6 @@ class Perfil extends StatelessWidget {
                                 style: TextStyle(fontSize: 12.0)),
                           ),
                         ),
-                        
                       ],
                     ),
                   )
