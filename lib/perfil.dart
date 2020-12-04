@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:redia/core/presentation/res/assets.dart' as assets;
 import 'package:redia/src/widgets/network_image.dart';
 import 'package:redia/catalogo.dart';
+import 'package:redia/chat_screen.dart';
 
 class Perfil extends StatelessWidget {
   static final String path = "lib/src/perfil.dart";
@@ -131,10 +132,71 @@ class Perfil extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(5.0),
-        child: PNetworkImage(assets.posts[0], fit: BoxFit.cover),
-      ),
+      child: Card(
+                    clipBehavior: Clip.antiAlias,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: 50,
+                              minHeight: 50,
+                              maxWidth: 50,
+                              maxHeight: 50,
+                            ),
+                            child: Material(
+                              elevation: 4.0,
+                              shape: CircleBorder(),
+                              clipBehavior: Clip.hardEdge,
+                              color: Colors.transparent,
+                              child: Ink.image(
+                                image: NetworkImage(assets.avatar),
+                                fit: BoxFit.cover,
+                                width: 50.0,
+                                height: 50.0,
+                              ),
+                            ),
+                          ),
+                          title: const Text('Taqueria Lcc'),
+                          subtitle: Text(
+                            '4:30pm',
+                            style:
+                                TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Text(
+                            'Ricos tacos',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                        ButtonBar(
+                          alignment: MainAxisAlignment.start,
+                          children: [
+                            FlatButton(
+                              textColor: const Color(0xFF6200EE),
+                              onPressed: () {
+                                // Perform some action
+                              },
+                              child: const Text('Like'),
+                            ),
+                            FlatButton(
+                              textColor: const Color(0xFF6200EE),
+                              onPressed: () {
+                                // Perform some action
+                              },
+                              child: const Text('Comment'),
+                            ),
+                          ],
+                        ),
+                        PNetworkImage(assets.posts[0], fit: BoxFit.cover),
+                      ],
+                    ),
+                  ),
     );
   }
 
@@ -260,6 +322,26 @@ class Perfil extends StatelessWidget {
                             subtitle: Text("Seguidores".toUpperCase(),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize: 12.0)),
+                          ),
+                        ),
+                        Expanded(
+                          child: ListTile(
+                            title: MaterialButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ChatScreen()),
+                                );
+                              },
+                              child: Icon(
+                                  Icons.chat,
+                                  color: Colors.blue,
+                                  size: 24.0,
+                                ),
+                            ),
+                            subtitle: Text("Enviar mensaje".toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 12.0, color: Colors.blue,)),
                           ),
                         ),
                       ],

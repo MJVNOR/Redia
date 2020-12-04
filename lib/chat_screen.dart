@@ -12,16 +12,39 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: Color(0xffC9E8F2),
       appBar: AppBar(
-        leading: null,
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.close),
-              onPressed: () {
-                //Implement logout functionality
-              }),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: const Text(
+          'Redia',
+          style: TextStyle(
+            fontFamily: 'Myriad CAD',
+            fontSize: 40,
+            color: const Color(0xff3d6573),
+          ),
+          textAlign: TextAlign.center,
+        ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Material(
+              elevation: 4.0,
+              shape: CircleBorder(),
+              clipBehavior: Clip.hardEdge,
+              color: Colors.transparent,
+              child: Ink.image(
+                image: NetworkImage(
+                  "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg",
+                ),
+                fit: BoxFit.cover,
+                width: 50.0,
+                height: 50.0,
+                child: InkWell(
+                  onTap: () {},
+                ),
+              ),
+            ),
+          )
         ],
-        title: Text('Redia Chat'),
-        backgroundColor: Color(0xff3D6573),
       ),
       body: SafeArea(
         child: Column(
