@@ -23,6 +23,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_floatactionbuttons: ^0.1.0
+  animator: ^2.0.1
+  bottomreveal: ^1.0.0
+  cached_network_image: ^2.2.0+1
+  charts_flutter: ^0.9.0
+  crop: ^0.1.2
+  flare_flutter: ^1.8.3
+  flutter_custom_clippers: ^1.1.1
+  flutter_staggered_grid_view: ^0.3.0
+  flutter_swiper: ^1.1.6
+  font_awesome_flutter: ^8.8.1
+  intl: ^0.16.1
+  intro_views_flutter: ^2.8.1
+  share: ^0.6.4+3
+  url_launcher: ^5.5.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -32,6 +47,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_automation: null
+  flutter_launcher_icons: ^0.7.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,3 +91,16 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - assets/
+    - assets/images/
+
+  fonts:
+    - family: icomoon
+      fonts:
+        - asset: assets/fonts/icomoon.ttf
+
+    - family: MyFlutterApp
+      fonts:
+        - asset: assets/fonts/MyFlutterApp.ttf
