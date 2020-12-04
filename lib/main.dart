@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redia/perfil.dart';
 import 'package:redia/timeLine.dart';
-//import 'package:redia/catalogo.dart';
+import 'package:redia/catalogo.dart';
 
 void main() {
   runApp(
