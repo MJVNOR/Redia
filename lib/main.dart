@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:redia/perfil.dart';
+import 'package:redia/timeLine.dart';
+//import 'package:redia/catalogo.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LandingPage(),
+      theme: ThemeData(
+          primaryColor: const Color(0xff9fb7bf),
+          primaryTextTheme:
+              TextTheme(headline6: TextStyle(color: Colors.white))),
       //home: Perfil(),
     ),
   );
@@ -107,7 +113,13 @@ class LandingPage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(10.0),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TimeLine()),
+                            );
+                          },
                           child: const Text('Sign In',
                               style: TextStyle(fontSize: 20)),
                         ),
@@ -128,7 +140,7 @@ class LandingPage extends StatelessWidget {
                             children: [
                               ListTile(
                                 title: Text(
-                                  "Sing Up",
+                                  "Sign Up",
                                   style: TextStyle(
                                     color: const Color(0xff3d6573),
                                     fontSize: 40,
@@ -169,7 +181,13 @@ class LandingPage extends StatelessWidget {
                                 colorBrightness: Brightness.dark,
                                 color: const Color(0xff3d6573),
                                 padding: EdgeInsets.all(20.0),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TimeLine()),
+                                  );
+                                },
                                 child: const Text('Join Us',
                                     style: TextStyle(fontSize: 20)),
                               ),
