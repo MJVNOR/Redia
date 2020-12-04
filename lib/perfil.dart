@@ -2,16 +2,25 @@ import 'dart:html';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:redia/core/presentation/res/assets.dart';
+import 'package:redia/core/presentation/res/assets.dart'
+        as assets;
 import 'package:redia/src/widgets/network_image.dart';
 
 class Perfil extends StatelessWidget {
   static final String path = "lib/src/perfil.dart";
   final List<Map> catalogo = [
-    {"title": "Tacos de asada", "image": tacos}, //meal
-    {"title": "Costillas", "image": costillas},
-    {"title": "Quesadillas", "image": quesadillas},
-    {"title": "Aguas frescas", "image": aguas},
+    {"title": "Tacos de asada", "image": assets.catalogo[0],},
+    {"title": "Costillas", "image": assets.catalogo[1],},
+    {"title": "Quesadillas", "image": assets.catalogo[2],},
+    {"title": "Aguas frescas", "image": assets.catalogo[3],},
+    {"title": "Tacos de asada", "image": assets.catalogo[0],},
+    {"title": "Costillas", "image": assets.catalogo[1],},
+    {"title": "Quesadillas", "image": assets.catalogo[2],},
+    {"title": "Aguas frescas", "image": assets.catalogo[3],},
+    {"title": "Tacos de asada", "image": assets.catalogo[0],},
+    {"title": "Costillas", "image": assets.catalogo[1],},
+    {"title": "Quesadillas", "image": assets.catalogo[2],},
+    {"title": "Aguas frescas", "image": assets.catalogo[3],},
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,7 +62,7 @@ class Perfil extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(5.0),
-        child: PNetworkImage(posts[0], fit: BoxFit.cover),
+        child: PNetworkImage(assets.posts[0], fit: BoxFit.cover),
       ),
     );
   }
@@ -72,7 +81,7 @@ class Perfil extends StatelessWidget {
           FlatButton(
             onPressed: () {},
             child: Text(
-              "Añadir",
+              "Ver catálogo",
               style: TextStyle(color: Colors.blue),
             ),
           )
@@ -193,7 +202,7 @@ class Perfil extends StatelessWidget {
                 shape: CircleBorder(),
                 child: CircleAvatar(
                   radius: 40.0,
-                  backgroundImage: NetworkImage(avatar),
+                  backgroundImage: NetworkImage(assets.avatar),
                 ),
               ),
             ],
