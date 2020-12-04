@@ -181,6 +181,9 @@ class LandingPage extends StatelessWidget {
                                 colorBrightness: Brightness.dark,
                                 color: const Color(0xff3d6573),
                                 padding: EdgeInsets.all(20.0),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(10.0),
+                                ),
                                 onPressed: () {
                                   Navigator.push(
                                     context,

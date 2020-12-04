@@ -5,6 +5,7 @@ import 'package:redia/core/presentation/res/assets.dart' as assets;
 import 'package:redia/src/widgets/network_image.dart';
 import 'package:redia/perfil.dart';
 import 'package:redia/catalogo.dart';
+import 'package:redia/edit_profile.dart';
 
 class TimeLine extends StatelessWidget {
   @override
@@ -38,7 +39,13 @@ class TimeLine extends StatelessWidget {
                 width: 50.0,
                 height: 50.0,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EditProfilePage()),
+                    );
+                  },
                 ),
               ),
             ),
@@ -63,6 +70,160 @@ class TimeLine extends StatelessWidget {
             padding: EdgeInsets.only(left: 250.0, right: 250.0, bottom: 30.0),
             child: ListView(
               children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                  child: Card(
+                    clipBehavior: Clip.antiAlias,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: 50,
+                              minHeight: 50,
+                              maxWidth: 50,
+                              maxHeight: 50,
+                            ),
+                            child: Material(
+                              elevation: 4.0,
+                              shape: CircleBorder(),
+                              clipBehavior: Clip.hardEdge,
+                              color: Colors.transparent,
+                              child: Ink.image(
+                                image: NetworkImage(assets.avatar),
+                                fit: BoxFit.cover,
+                                width: 50.0,
+                                height: 50.0,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Perfil()),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                          title: const Text('Taqueria Lcc'),
+                          subtitle: Text(
+                            '4:30pm',
+                            style:
+                                TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Text(
+                            'Ricos tacos',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                        ButtonBar(
+                          alignment: MainAxisAlignment.start,
+                          children: [
+                            FlatButton(
+                              textColor: const Color(0xFF6200EE),
+                              onPressed: () {
+                                // Perform some action
+                              },
+                              child: const Text('Like'),
+                            ),
+                            FlatButton(
+                              textColor: const Color(0xFF6200EE),
+                              onPressed: () {
+                                // Perform some action
+                              },
+                              child: const Text('Comment'),
+                            ),
+                          ],
+                        ),
+                        PNetworkImage(assets.posts[0], fit: BoxFit.cover),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                  child: Card(
+                    clipBehavior: Clip.antiAlias,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: 50,
+                              minHeight: 50,
+                              maxWidth: 50,
+                              maxHeight: 50,
+                            ),
+                            child: Material(
+                              elevation: 4.0,
+                              shape: CircleBorder(),
+                              clipBehavior: Clip.hardEdge,
+                              color: Colors.transparent,
+                              child: Ink.image(
+                                image: NetworkImage(assets.avatar),
+                                fit: BoxFit.cover,
+                                width: 50.0,
+                                height: 50.0,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Perfil()),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                          title: const Text('Taqueria Lcc'),
+                          subtitle: Text(
+                            '4:30pm',
+                            style:
+                                TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Text(
+                            'Ricos tacos',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                        ButtonBar(
+                          alignment: MainAxisAlignment.start,
+                          children: [
+                            FlatButton(
+                              textColor: const Color(0xFF6200EE),
+                              onPressed: () {
+                                // Perform some action
+                              },
+                              child: const Text('Like'),
+                            ),
+                            FlatButton(
+                              textColor: const Color(0xFF6200EE),
+                              onPressed: () {
+                                // Perform some action
+                              },
+                              child: const Text('Comment'),
+                            ),
+                          ],
+                        ),
+                        PNetworkImage(assets.posts[0], fit: BoxFit.cover),
+                      ],
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                   child: Card(

@@ -36,53 +36,72 @@ class Catalogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 300.0,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Taquería LCC'),
-              background: PNetworkImage(assets.posts[0], fit: BoxFit.cover),
-            ),
-          ),
-          SliverToBoxAdapter(
+      body: Stack(
+        children: [
+          Opacity(
+            opacity: 0.07,
             child: Container(
-                color: const Color(0xff3d6573),
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      // ignore: missing_required_param
-                      MaterialButton(
-                        //onPressed: () {},
-                        child: Text(
-                          "Catálogo".toUpperCase(),
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
-                )),
-          ),
-          
-          SliverPadding(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0, bottom: 16.0),
-            sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisSpacing: 10.0,
-                  crossAxisSpacing: 10.0,
-                  childAspectRatio: 1.0,
-                  crossAxisCount: 3),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return _buildItems(index, context);
-                },
-                childCount: catalogo.length,
+              decoration: BoxDecoration(
+                //color: const Color(0xff7c94b6),
+                image: DecorationImage(
+                  image: AssetImage("images/fondo.jpg"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
+          ),
+          CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                expandedHeight: 300.0,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Text('Taquería LCC'),
+                  background: PNetworkImage(assets.posts[0], fit: BoxFit.cover),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 30.0),
+                  child: Container(
+                      color: const Color(0xff3d6573),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            // ignore: missing_required_param
+                            MaterialButton(
+                              //onPressed: () {},
+                              child: Text(
+                                "Catálogo".toUpperCase(),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.only(left: 16.0, right: 16.0),
+                sliver: SliverGrid(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      mainAxisSpacing: 10.0,
+                      crossAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
+                      crossAxisCount: 3),
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      return _buildItems(index, context);
+                    },
+                    childCount: catalogo.length,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
